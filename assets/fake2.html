@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-ios.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.footer {
+  background-color: #0099cc;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 600%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+h6 {font-family: sofia;}
+.container { margin: 150px auto; }
+
+h2 { font-size: 1.25rem; }
+input { margin-bottom:0   rem; }
+
+.styled {
+border: 0;
+line-height: 2.5;
+padding: 0 20px;
+font-size: 1rem;
+text-align: center;
+color: #fff;
+text-shadow: 1px 1px 1px #000;
+border-radius: 10px;
+background-color: rgba(220, 0, 0, 1);
+background-image: linear-gradient(to top left,
+                                rgba(0, 0, 0, .2),
+                                rgba(0, 0, 0, .2) 30%,
+                                rgba(0, 0, 0, 0));
+box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+          inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.styled:hover {
+background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+          inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+
+html, body {
+width: 100%;
+height:100%;
+}
+
+body {
+background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+background-size: 400% 400%;
+animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+0% {
+  background-position: 0% 50%;
+}
+50% {
+  background-position: 100% 50%;
+}
+100% {
+  background-position: 0% 50%;
+}
+}
+
+
+
+.neonText {
+  color: rgb(233, 115, 18);
+  text-shadow:
+      0 0 7px rgb(223, 212, 212),
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 100px rgb(107, 192, 38),
+      0 0 82px rgb(211, 171, 60),
+      0 0 92px #0fa,
+      0 0 102px rgb(188, 53, 206),
+      0 0 151px #0fa;
+}
+
+/* Additional styling */
+  
+body {
+  font-size: 18px;
+  font-family: "Vibur", sans-serif;
+  background-color: #010a01;
+}  
+
+h1{
+
+  font-variant: initial;
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+  text-decoration-color: #287ff0;
+  text-transform: inherit;
+}
+h2 {
+  text-align-last: inherit;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  text-decoration-color: #e73c7e;
+}
+  
+
+.container {
+  margin-top: 20vh;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  {% for logohere in logoshere %}
+  <img align="left" src="{{logohere.logo.url}}" alt="Italian Trulli" width="240" height="96">
+ 
+  {%endfor%}
+  <center><h1 class="neonText">Welcome to ridoo.in</h1></center>
+
+      
+      <div >
+     <center> <p> <a href="https://ridoo.in" target="_blank">ridoo.in</a>&ensp;&ensp;&ensp;
+     <a href="https://ridoo.in/services" target="_blank">Services</a>&ensp;&ensp;&ensp;
+     <a href="https://ridoo.in/why-choose-me/" target="_blank">Why choose ridoo</a>&ensp;&ensp;&ensp;
+     <a href="https://ridoo.in/contact/" target="_blank">Contact</a>&ensp;&ensp;
+     <a href="mailto:help@ridoo.in"  target="_blank">Help</a></p></center>
+</div>
+</div>
+<div class="row">
+  <div class="col-3 col-s-3 menu">
+    <ul>
+      
+      {% if user.is_authenticated%}
+    <li>Byeee...{{user.username}}</li><br><br>
+    <li><a href="logout " >Logout</a></li> 
+    {%else%}
+    <li><a href="register" target="_blank">Register</a></li><br>
+    <li><a href="login"  target="_blank">Login</a></li><br>
+   
+    <div class="w3-container">  
+      <div class="col-12 col-12"></div>
+    <button class="w3-button w3-red" onclick="document.getElementById('id01').style.display='block'">Notifications</button>
+    
+<div id="id01" class="w3-panel w3-green w3-display-container" style="display:none">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-red w3-display-topright">x</span>
+  {% for alert in alerts %}
+  <p><b>{{alert.dateandtime}}:-</b> {{alert.info_alert}} </p><br>
+  {%endfor%}
+</div>
+</div> 
+    </ul>
+  </div><br>
+
+  <div class="col-6 col-s-3">
+    <h1>The Karimnagar City</h1>
+    <h2><p>We are proud and humbled to start this online Bike Rental Services <b> “www.ridoo.in”</b> in our karimnagar. All we need is your blessings and love. Being realistic, we knew that starting this site in pandemic was not the best timeline. yet we decided to serve  the people in as many ways we can.</p></h2>
+  </div>
+
+  <div class="col-3 col-s-6">
+    <div class="aside">
+      <h2>What?</h2>
+      <p>Chania is a city on the island of Crete.</p>
+      <h2>Where?</h2>
+      <p>Crete is a Greek island in the Mediterranean Sea.</p>
+      <h2>How?</h2>
+      <p>You can reach Chania airport from all over Europe.</p>
+    </div>
+  </div>
+
+  <div class="w3-container">  
+    <div class="col-12 col-s-3 menu">
+         <div>
+              {% for logohere in logoshere %}
+              
+                <marquee behavior="scroll" direction="right">
+                  <h3>On Going Rides
+                  <img src="{{logohere.bikelogo.url}}"  alt="Swimming fish" width="75" height="34"></h3>
+                  </marquee>
+                {%endfor%}
+              </div>
+           
+            <table class="w3-table-all w3-centered" >
+          <tr> 
+            <th class="w3-container w3-2021-rust" >Date_Time</th>
+            <th class="w3-container w3-2021-rust">Bike_Number</th>
+            <th class="w3-container w3-2021-rust">Rider_Name</th>
+            <th class="w3-container w3-2021-rust">Rider_Number</th>
+            <th class="w3-container w3-2021-rust">Current_Location</th>
+          </tr>
+        {% for fest in fests %}
+       <tr class="w3-theme-l3">
+        <td>{{fest.date_time}}</td>
+        <td> {{fest.bikenum}}</td>
+        <td> {{fest.ridername}}</td>
+        <td> {{fest.ridernum}}</td>
+        <td>{{fest.currentlocation}}<br></td>
+      </tr>
+      
+        {%endfor%}
+        {%endif%}
+      </table><br></div></div>
+    
+    
+  
+</div>
+  
+  
+<div class="footer">
+  <p>Resize the browser window to see how the content respond to the resizing.</p>
+</div>
+<div class="container">
+   
+ </div>
+
+</body>
+</html>

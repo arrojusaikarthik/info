@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-ios.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Welcome</title>
+    <style>
+      
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        h6 {font-family: sofia;}
+        .container { margin: 150px auto; }
+       
+        h2 { font-size: 1.25rem; }
+        input { margin-bottom:0   rem; }
+        .glow {
+      font-size: 80px;
+      color: #fff;
+      text-align: center;
+      animation: glow 6s ease-in-out infinite alternate;
+    }
+    .styled {
+      border: 0;
+      line-height: 2.5;
+      padding: 0 20px;
+      font-size: 1rem;
+      text-align: center;
+      color: #fff;
+      text-shadow: 1px 1px 1px #000;
+      border-radius: 10px;
+      background-color: rgba(220, 0, 0, 1);
+      background-image: linear-gradient(to top left,
+                                        rgba(0, 0, 0, .2),
+                                        rgba(0, 0, 0, .2) 30%,
+                                        rgba(0, 0, 0, 0));
+      box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                  inset -2px -2px 3px rgba(0, 0, 0, .6);
+  }
+  
+  .styled:hover {
+      background-color: rgba(255, 0, 0, 1);
+  }
+  
+  .styled:active {
+      box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                  inset 2px 2px 3px rgba(0, 0, 0, .6);
+  }
+
+
+  html, body {
+    width: 100%;
+    height:100%;
+  }
+  
+  body {
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  img {
+    float:left;
+   
+  }
+        </style>
+</head>
+<body>
+
+  
+      <div class="w3-panel w3-ios-dark-blue" > 
+        
+        <div class="w3-container w3-center w3-animate-top">
+  <div class="w3-container">
+    
+  {% for logohere in logoshere %}
+  <img src="{{logohere.logo.url}}" alt="Italian Trulli" width="250" height="100">
+ 
+  {%endfor%}
+    
+      <h1 >Ridoo</h1>
+      <p> <a href="https://ridoo.in" target="_blank">ridoo.in</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     <a href="https://ridoo.in/services" target="_blank">Services</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     <a href="https://ridoo.in/why-choose-me/" target="_blank">Why choose ridoo</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     <a href="https://ridoo.in/contact/" target="_blank">Contact</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     <a href="mailto:help@ridoo.in"  target="_blank">Send email</a></p>
+    </div>
+  </div>
+</div>
+  {% if user.is_authenticated%}
+    <li>Byeee...{{user.username}}</li><br><br>
+    <li><a href="logout " class="favorite styled" >Logout</a></li> 
+    {%else%}
+    <li><a href="register" class="favorite styled" target="_blank">Register</a></li><br>
+    <li><a href="login" class="favorite styled" target="_blank">Login</a></li><br>
+
+    <div class="w3-container">
+    <button class="w3-button w3-red" onclick="document.getElementById('id01').style.display='block'">Notifications</button>
+
+<div id="id01" class="w3-panel w3-green w3-display-container" style="display:none">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-red w3-display-topright">x</span>
+  {% for alert in alerts %}
+  <p><b>{{alert.dateandtime}}:-</b> {{alert.info_alert}} </p><br>
+  {%endfor%}
+</div>
+</div> 
+    
+    <div class="w3-container">  
+     <i class="fa fa-spinner w3-spin" style="font-size:22px"></i> <h2>On going rides</h2>
+        <table class="w3-table-all w3-centered" >
+      <tr> 
+        <th class="w3-container w3-2021-rust" >Date_Time</th>
+        <th class="w3-container w3-2021-rust">Bike_Number</th>
+        <th class="w3-container w3-2021-rust">Rider_Name</th>
+        <th class="w3-container w3-2021-rust">Rider_Number</th>
+        <th class="w3-container w3-2021-rust">Current_Location</th>
+      </tr>
+    {% for fest in fests %}
+   <tr class="w3-theme-l3">
+    <td>{{fest.date_time}}</td>
+    <td> {{fest.bikenum}}</td>
+    <td> {{fest.ridername}}</td>
+    <td> {{fest.ridernum}}</td>
+    <td>{{fest.currentlocation}}<br></td>
+  </tr>
+  
+    {%endfor%}
+    {%endif%}
+  </table><br>
+</div>
+
+<footer class="w3-panel w3-ios-dark-blue">
+  <h5>Footer</h5>
+  <p>Footer information goes here</p>
+</footer>
+
+
+</body>
+</html>

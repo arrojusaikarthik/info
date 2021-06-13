@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/cyborg/bootstrap.min.css">
+    
+    <style>
+        body { padding: 2rem; }
+        h6 {font-family: sofia;}
+        .container { margin: 150px auto; }
+       
+        h2 { font-size: 1.25rem; }
+        input { margin-bottom:0   rem; }
+        .glow {
+      font-size: 80px;
+      color: #fff;
+      text-align: center;
+      animation: glow 6s ease-in-out infinite alternate;
+    }
+    .styled {
+        border: 0;
+        line-height: 2.5;
+        padding: 0 20px;
+        font-size: 1rem;
+        text-align: center;
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
+        border-radius: 10px;
+        background-color: rgba(220, 0, 0, 1);
+        background-image: linear-gradient(to top left,
+                                          rgba(0, 0, 0, .2),
+                                          rgba(0, 0, 0, .2) 30%,
+                                          rgba(0, 0, 0, 0));
+        box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                    inset -2px -2px 3px rgba(0, 0, 0, .6);
+    }
+    
+    .styled:hover {
+        background-color: rgba(255, 0, 0, 1);
+    }
+    
+    .styled:active {
+        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                    inset 2px 2px 3px rgba(0, 0, 0, .6);
+    }
+  </style>
+  
+</head>
+<body><center><h3>Login Here</h3></center>
+    
+    <form action="login" method="post">
+        {% csrf_token%}
+        <input type="text" class="form-control" name="username" placeholder="Username" required><br><br>
+        <input type="passsword" class="form-control" name="password" placeholder="Password" required><br><br>
+       
+        <center><input  class="favorite styled" value="login" type="submit"></center><br><br>
+        </form>
+        <div>{% for message in messages %}
+            <h4>   {{message}} </h4>
+                {%endfor%}
+</body>
+</html>

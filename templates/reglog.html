@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-ios.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.footer {
+  background-color: #0099cc;
+  color: #ffffff;
+  text-align: center;
+  font-size: 10px;
+  padding: 10px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 600%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+h6 {font-family: sofia;}
+.container { margin: 150px auto; }
+
+h2 { font-size: 1.25rem; }
+input { margin-bottom:0   rem; }
+
+.styled {
+border: 0;
+line-height: 2.5;
+padding: 0 20px;
+font-size: 1rem;
+text-align: center;
+color: #fff;
+text-shadow: 1px 1px 1px #000;
+border-radius: 10px;
+background-color: rgba(220, 0, 0, 1);
+background-image: linear-gradient(to top left,
+                                rgba(0, 0, 0, .2),
+                                rgba(0, 0, 0, .2) 30%,
+                                rgba(0, 0, 0, 0));
+box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+          inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.styled:hover {
+background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+          inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+
+html, body {
+width: 100%;
+height:100%;
+}
+
+body {
+background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+background-size: 400% 400%;
+animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+0% {
+  background-position: 0% 50%;
+}
+50% {
+  background-position: 100% 50%;
+}
+100% {
+  background-position: 0% 50%;
+}
+}
+
+
+html, body {
+  width: 100%;
+  height:100%;
+  }
+  
+  body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+  }
+  body {
+    background-color: #2f3742;
+    
+   
+}
+
+h1 {
+    font-size: 50px;
+    color: #fff;
+    font-family:'cursive-font', serif;
+    
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+}
+h3{
+font-size: 30px;
+
+}
+h4 {
+  font-size: 20px;
+  color: rgb(246, 244, 247);
+  
+  text-shadow: 0 0 5px rgb(238, 229, 229), 0 0 10px rgb(252, 248, 248), 0 0 15px #0aaae9, 0 0 20px #088de6, 0 0 25px #09a9f3, 0 0 30px #0a6afa, 0 0 35px #09aaf5;
+}
+h5{
+  font-size: 21px;
+  
+  }
+
+
+
+
+/*icons*/
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 3px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+
+.fa-instagram {
+  background: #ea4c89;
+  color: white;
+}
+
+
+.fa-android {
+  background: #a4c639;
+  color: white;
+}
+.fa-whatsapp {
+  background:  #00b489;
+  color: white;
+}
+.fa-telegram {
+  background:#55ACEE;
+  color: white;
+}
+          
+* {
+  box-sizing: border-box;
+ box-shadow: inset; 
+}
+input[type=text] {
+  width: 500px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 18px 12px 22px;
+  
+}
+
+  
+  input[type=text]:focus {
+    width: 500px;
+  }
+  
+
+#myUL {
+  width: 500px;
+  list-style-type:circle;
+  border: 1px solid rgb(207, 241, 12);
+  padding: 0px;
+  margin: 0px;
+}
+
+#myUL li a {
+  
+  width: 500px;
+  border: 1px solid rgb(5, 240, 76);
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #230cf1;
+  padding: 12px;
+  text-decoration:solid;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+  
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  {% for logohere in logoshere %}
+  <img align="left" src="{{logohere.logo.url}}" alt="Italian Trulli" width="260" height="101">
+ 
+  {%endfor%}
+  <center><h1>Welcome to ridoo.in</h1></center>
+
+      
+      <div >
+     <center> <p> <a href="https://ridoo.in" target="_blank">ridoo.in</a>&ensp;&ensp;&ensp;
+     <a href="https://ridoo.in/services" target="_blank">Services</a>&ensp;&ensp;&ensp;
+     <a href="https://ridoo.in/why-choose-me/" target="_blank">Why choose ridoo</a>&ensp;&ensp;&ensp;
+     <a href="https://ridoo.in/contact/" target="_blank">Contact</a>&ensp;&ensp;
+     <a href="mailto:help@ridoo.in"  target="_blank">Help</a></p></center>
+</div>
+</div>
+<div class="row">
+  <div class="col-3 col-s-3 menu">
+    <ul>
+      
+      {% if user.is_authenticated%}
+    <li>Byeee...{{user.username}}</li><br><br>
+    <li><a href="logout " >Logout</a></li> 
+    {%else%}
+    <li><a href="register" target="_blank">Register</a></li><br>
+    <li><a href="login"  target="_blank">Login</a></li><br>
+    <li><a href="orderid"  target="_blank">all orders</a></li><br>
+   
+    <div class="w3-container">  
+      <div class="col-12 col-12"></div>
+    <button class="w3-button w3-red" onclick="document.getElementById('id01').style.display='block'">Notifications</button>
+    
+<div id="id01" class="w3-panel w3-green w3-display-container" style="display:none">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-red w3-display-topright">x</span>
+  {% for alert in alerts %}
+  <p><b>{{alert.dateandtime}}:-</b> {{alert.info_alert}} </p><br>
+  {%endfor%}
+</div>
+</div> 
+    </ul>
+  </div><br>
+
+
+  
+  <div class="col-6 col-s-3">
+    <center><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for bikes activity.." title="Type in a name"></center>
+  <center><ul id="myUL">
+  <li><a href="#" target="_blank" >TS 02 AB 8888</a></li>
+    <li><a href="#" target="_blank">TS 02 CD 5878</a></li>
+    <li><a href="#">TS 02 EF 2580</a></li>
+    
+    
+  </ul></center>
+</div>
+
+  <div class="col-6 col-s-3">
+    <h3>Now In Our Karimnagar</h3>
+    <h2><p>We are proud and humbled to start this online Bike Rental Services <b> “www.ridoo.in”</b> in our karimnagar. All we need is your blessings and love. Being realistic, we knew that starting this site in pandemic was not the best timeline. yet we decided to serve  the people in as many ways we can.</p></h2>
+  </div>
+
+  <div class="col-3 col-s-6">
+    <div class="aside">
+      <h2>What?</h2>
+      <p>Bike rental services in our karimnagar.</p>
+      <h2>Where?</h2>
+      <p>3rd floor, IT Tower Karimnagar.</p>
+      <h2>How?</h2>
+      <p>Turning, imagination into reality is nothing but our <b>RIDOO</b>.We are dedicated and detremined to serve the people in as many ways we can. </p>
+    </div>
+  </div>
+
+  <div class="w3-container">  
+    <div class="col-12 col-s-3 menu">
+         <div>
+              {% for logohere in logoshere %}
+              
+                <marquee behavior="scroll" direction="right">
+                  <h4>On Going Rides
+                  <img src="{{logohere.bikelogo.url}}"  alt="Swimming fish" width="75" height="34"></h4>
+                  </marquee>
+                {%endfor%}
+              </div>
+           
+            <table class="w3-table-all w3-centered" >
+          <tr> 
+            <th class="w3-container w3-2021-rust" >Date_Time</th>
+            <th class="w3-container w3-2021-rust">Bike_Number</th>
+            <th class="w3-container w3-2021-rust">Rider_Name</th>
+            <th class="w3-container w3-2021-rust">Rider_Number</th>
+            <th class="w3-container w3-2021-rust">Current_Location</th>
+          </tr>
+        {% for fest in fests %}
+       <tr class="w3-theme-l3">
+        <td>{{fest.date_time}}</td>
+        <td> {{fest.bikenum}}</td>
+        <td> {{fest.ridername}}</td>
+        <td> {{fest.ridernum}}</td>
+        <td>{{fest.currentlocation}}<br></td>
+      </tr>
+      
+        {%endfor%}
+        {%endif%}
+      </table><br></div></div>
+    
+    
+  
+</div>
+  
+  
+<div class="footer">
+  <h5><p align="center">Copyright © 2021 ridooservices
+  
+
+    <!-- Add font awesome icons -->
+    <a href="#" class="fa fa-google" style="font-size:24px"></a>
+    <a href="https://t.me/ridooservices_knr" class="fa fa-telegram" target="_blank" style="font-size:24px"></a>
+    <a href="#" class="fa fa-android"  style="font-size:24px"></a>
+    <a href="https://www.instagram.com/ridooservices_knr" class="fa fa-instagram" target="_blank" style="font-size:24px"></a>
+    <a href="#" class="fa fa-whatsapp"  style="font-size:24px"></a>
+    </h5>
+</div>
+<div class="container">
+   
+ </div>
+
+ <script>
+  var UL = document.getElementById("myUL");
+  // hilde the list by default
+  UL.style.display = "none";
+  
+  var searchBox = document.getElementById("myInput");
+  
+  // show the list when the input receive focus
+  searchBox.addEventListener("focus",  function(){
+      // UL.style.display = "block";
+  });
+  
+  // hide the list when the input receive focus
+  searchBox.addEventListener("focus", function(){
+      UL.style.display = "none";
+  });
+  
+  
+  function myFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("myInput");
+      ul = document.getElementById("myUL");
+      filter = input.value.toUpperCase();
+      // if the input is empty hide the list
+      if(filter.trim().length < 1) {
+          ul.style.display = "none";
+          return false;
+      } else {
+          ul.style.display = "block";
+      }
+  
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+  
+          // This is when you want to find words that contain the search string
+       if (a.innerHTML.toUpperCase().indexOf(filter) > -1) { 
+          li[i].style.display = "";
+       } else {
+          li[i].style.display = "none";
+      } 
+  
+      // This is when you want to find words that start the search string
+      /*if (a.innerHTML.toUpperCase().startsWith(filter)) {
+          li[i].style.display = "";
+      } else {
+          li[i].style.display = "none";
+      }*/
+      }
+  }
+  </script>
+
+</body>
+</html>
